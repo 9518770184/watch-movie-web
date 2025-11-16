@@ -1,10 +1,20 @@
 import './App.css'
 import { Navbar } from './components/Navbar'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Movies from './components/Movies'
+import WatchList from './components/WatchList'
+import Banner from './components/Banner'
 
 function App() {
   return (
     <>
-      <Navbar></Navbar>
+      <BrowserRouter>
+        <Navbar></Navbar>
+        <Routes>
+          <Route path='/' element= {<><Banner/> <Movies/></>}></Route>
+          <Route path='/watchlist' element={<WatchList/>}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
